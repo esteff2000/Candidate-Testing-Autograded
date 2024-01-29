@@ -36,9 +36,21 @@ console.log(`Your answers: \n ${candidateAnswers} \nCorrect answers: \n ${correc
 
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
+  let counter = 0
+for (let i = 0; i < correctAnswers.length; i++) {
+  if (candidateAnswers[i].toUpperCase() == correctAnswers[i].toUpperCase()) {
+    counter += 1;
+  }
 
-
+}
+grade = (counter / questions.length) * 100;
+if (grade >= 80) {
+  console.log('You passed!');
+} else {
+  console.log('You have failed :(');
+}
+console.log (`Your grade is ${grade}% `);
   return grade;
 }
 
